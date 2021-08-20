@@ -6,3 +6,6 @@ ibm/tmp/*.zip
 *.DS_Store
 *terraform.tfstate.backup
 *.terraform.tfstate.lock.info
+
+# OpenFaaS
+template
