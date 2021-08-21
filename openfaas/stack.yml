@@ -8,3 +8,7 @@ functions:
     handler: ../functions/template-python
     image: template-python:latest
 
+  node14-fun:
+    lang: node14
+    handler: ../functions/template-node
+    image: node14-fun:latest
