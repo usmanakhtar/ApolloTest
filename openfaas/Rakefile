@@ -1,0 +1,11 @@
+# frozen_string_literal: true
+
+require 'pathname'
+require 'open3'
+
+task :publish, [:f] do |f: '*'|
+  desc 'publish a function file'
+  Pathname.glob("#{f}.yml").each do |file|
+    sh 'faas-cli', 'publish', '-f', file.to_s, '--platforms', 'linux/arm64,linux/arm,linux/amd64'
+  end
+end
