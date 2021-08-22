@@ -9,3 +9,4 @@ ibm/tmp/*.zip
 
 # OpenFaaS
 template
+openfaas/build
