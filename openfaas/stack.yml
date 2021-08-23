@@ -6,9 +6,13 @@ functions:
   template-python:
     lang: python3-http
     handler: ../functions/template-python
+    # add a Docker ID if you want to publish the function
+    # image: <DOCKER_ID>/template-python:latest
     image: template-python:latest
 
   template-node:
     lang: node14
     handler: ../functions/template-node
+    # add a Docker ID if you want to publish the function
+    # image: <DOCKER_ID>/template-node:latest
     image: template-node:latest
