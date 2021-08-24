@@ -17,3 +17,14 @@
     6. Adjust the function test in `handler_test.py` and the `tox.ini` if you plan to use automated testing with the OpenFaaS CLI.
     7. Add any `pip` dependencies in `requirements.txt`.
     8. Follow the deployment guide for [OpenFaaS Docker images](./openfaas.md).
+- Ruby:
+    1. Create a copy of the `functions/template-ruby` and name it accordingly (should be in the same folder).
+    2. Navigate to your copy.
+    3. Adjust the `Handler` class within `handler.rb` to your needs.
+    4. Add any required `gems` in `Gemfile`.
+    5. Follow the deployment guide for [OpenFaaS Docker images](./openfaas.md).
+- Go:
+    1. Create a copy of the `functions/template-go` and name it accordingly (should be in the same folder).
+    2. Navigate to your copy.
+    3. Adjust the `Handler` function within `handler.go` to your needs.
+    4. Follow the deployment guide for [OpenFaaS Docker images](./openfaas.md).

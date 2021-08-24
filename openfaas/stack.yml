@@ -16,3 +16,17 @@ functions:
     # add a Docker ID if you want to publish the function
     # image: <DOCKER_ID>/template-node:latest
     image: template-node:latest
+
+  template-ruby:
+    lang: ruby-http
+    handler: ./template-ruby
+    # add a Docker ID if you want to publish the function
+    # image: <DOCKER_ID>/template-ruby:latest
+    image: template-ruby:latest
+
+  template-go:
+    lang: golang-http
+    handler: ./template-go
+    # add a Docker ID if you want to publish the function
+    # image: <DOCKER_ID>/template-go:latest
+    image: template-go:latest

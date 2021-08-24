@@ -37,6 +37,8 @@ done
 echo "Fetching OpenFaaS templates ...\n"
 faas-cli template pull
 faas-cli template store pull python3-flask
+faas-cli template store pull ruby-http
+faas-cli template store pull golang-http
 
 shopt -s nullglob
 for i in ${FILE_ARG:-*}.y*ml; do

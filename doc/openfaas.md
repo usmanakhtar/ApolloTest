@@ -6,6 +6,7 @@ Before you begin building the functions, **make sure** that `faas-cli` and Docke
 Adjust the file `openfaas/stack.yml` to include any newly generated functions.
 
 The following parameters have to be set in the `.yml` file:
+
 - `lang`: Describes the base template used by OpenFaaS. This should be equal to the value of the copied function.
 - `handler`: The path to the function folder
 - `image`: The Docker image name and tag. Include a Docker ID if you intend to push the image to a registry.
@@ -13,6 +14,7 @@ The following parameters have to be set in the `.yml` file:
 ## Building
 
 Build the function images by running the provided script in the `openfaas` directory:
+
 ```sh
 ./build.sh
 ```
