@@ -13,4 +13,3 @@ myF.handler(event).
   catch(err => {
     console.log(err);
   });
-  
