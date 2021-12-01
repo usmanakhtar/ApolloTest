@@ -8,11 +8,6 @@ functions:
     handler: ../functions/func-assemble    
     image: fedor89/func-assemble:latest    
 
-  func-shift:
-    lang: python3-http
-    handler: ../functions/func-shift    
-    image: fedor89/func-shift:latest
-
   func-split:
     lang: python3-http
     handler: ../functions/func-split    
