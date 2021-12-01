@@ -3,30 +3,19 @@ provider:
   name: openfaas
   gateway: http://127.0.0.1:8080 # replace with OpenFaaS gateway address
 functions:
-  template-python:
+  func-assemble:
     lang: python3-http
-    handler: ../functions/template-python
-    # add a Docker ID if you want to publish the function
-    # image: <DOCKER_ID>/template-python:latest
-    image: template-python:latest
+    handler: ../functions/func-assemble    
+    image: fedor89/func-assemble:latest    
 
-  template-node:
-    lang: node14
-    handler: ../functions/template-node
-    # add a Docker ID if you want to publish the function
-    # image: <DOCKER_ID>/template-node:latest
-    image: template-node:latest
+  func-shift:
+    lang: python3-http
+    handler: ../functions/func-shift    
+    image: fedor89/func-shift:latest
 
-  template-ruby:
-    lang: ruby-http
-    handler: ./template-ruby
-    # add a Docker ID if you want to publish the function
-    # image: <DOCKER_ID>/template-ruby:latest
-    image: template-ruby:latest
+  func-split:
+    lang: python3-http
+    handler: ../functions/func-split    
+    image: fedor89/func-split:latest
 
-  template-go:
-    lang: golang-http
-    handler: ./template-go
-    # add a Docker ID if you want to publish the function
-    # image: <DOCKER_ID>/template-go:latest
-    image: template-go:latest
+  
