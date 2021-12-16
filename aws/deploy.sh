@@ -19,8 +19,7 @@ helpmenu () {
 }
 
 showURL () {
-    numberLines = $(cat lambda.tf  | grep 'output "' | wc -l)
-    terraform show | tail -n $numberLines
+    terraform show | tail -n 3
 }
 
 createMappings () {

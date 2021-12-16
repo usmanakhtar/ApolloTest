@@ -4,6 +4,7 @@ We need to adjust `aws/lambda.tf` and `aws/deployment.sh` to add a new function 
 - Node:
     - `aws/deploy.sh`:
         1. Add `./build.sh ../functions/<your-function-name>` before `terraform init`.
+        2. Adjust the line number in the `showURL` block: `terraform show | tail -n 3` (example for deploying 3 functions) 
     - `aws/lambda.tf`:
         1. Add `"<your_function_name>"` to the function_names array.
         2. Add the path of the zip file to the function_paths array (normally this should be: `"tmp/<your_function_name.zip"`)
