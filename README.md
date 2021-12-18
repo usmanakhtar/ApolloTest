@@ -41,18 +41,13 @@ cd Apollo-Template
     Run from root dir `docker run --rm -it --entrypoint=/app/deployAll.sh -v ${PWD}:/app/ chrisengelhardt/apollo-autodeploy`
    - B: Deploy on a single provider with custom settings:
       - Go to the directory of the corresponding provider
-      - Run `docker run --rm -v ${PWD}:/app/ -v ${PWD}/../functions:/functions/ chrisengelhardt/apollo-autodeploy` to deploy the functions
-      - Run `docker run --rm -v ${PWD}:/app/ -v ${PWD}/../functions:/functions/ chrisengelhardt/apollo-autodeploy --mappings` to create the `typeMappings.json` file required by Apollo
+      - Run `docker run --network=host --rm -v ${PWD}:/app/ -v ${PWD}/../functions:/functions/ chrisengelhardt/apollo-autodeploy` to deploy the functions
+      - Run `docker run --network=host --rm -v ${PWD}:/app/ -v ${PWD}/../functions:/functions/ chrisengelhardt/apollo-autodeploy --mappings` to create the `typeMappings.json` file required by Apollo
 
-Note: For IBM you have to create a namespace first and place it into `ibm.tf` on all lines with `namespace = "YOURNAMESPACE"`.
+**Note 1:** For IBM you have to create a namespace first and place it into `ibm.tf` on all lines with `namespace = "YOURNAMESPACE"`.
 
-```text
-Usage: /app/deploy.sh [--help] [--region region] [--url] [--mapping]
+**Note 2:** On some systems, the Docker container used during the deployment process can sometimes have problems connecting to the Internet, resulting in an error message. Known fixes for the problem are:
 
-Commands:
-    --help                  Show this help output.
-    --region region         Sets a specific region for the deployment. Use a region from:
-                https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html
-    --url                   Prints out all deployment urls
-    --mappings              Creates typeMapping.json with the deployment urls
-```
+- Kill the corresponding container and rerun the script
+- OR restart your computer and rerun the script
+
