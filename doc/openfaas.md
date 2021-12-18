@@ -21,3 +21,6 @@ Build the function images by running the provided script in the `openfaas` direc
 
 Using the `-f` or `--file` flag, a filename can be supplied to match only a single `.y*ml` file describing functions (passing `-f stack` would search the directory using `stack.y*ml`).
 All files matching `*.y*ml` are used per default to find function descriptions. The `-p` or `--publish` flag can be supplied to also push the built functions to a container registry.
+
+## Type Mappings File
+Adjust the provided template `typeMappings.json` by creating one function block for each of your functions and editing their function type and image name.
