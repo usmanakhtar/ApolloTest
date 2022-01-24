@@ -50,10 +50,10 @@ EOF
 ############################################
 
 locals {
-  function_names = ["template-node","template-python"]
-  function_paths = ["tmp/template-node.zip","tmp/template-python.zip"]
-  function_runtimes = ["nodejs14.x","python3.8"]
-  function_handlers = ["index.handler","lambda_function.lambda_handler"]
+  function_names = ["find"]
+  function_paths = ["tmp/find.zip"]
+  function_runtimes = ["python3.8"]
+  function_handlers = ["lambda_function.lambda_handler"]
   function_layers = [[],[]]
 }
 
@@ -144,15 +144,7 @@ resource "aws_api_gateway_deployment" "example0" {
    stage_name  = local.function_names[0]
 }
 
-resource "aws_api_gateway_deployment" "example1" {
-   depends_on = [
-     aws_api_gateway_integration.lambda[1],
-     aws_api_gateway_integration.lambda_root[1],
-   ]
 
-   rest_api_id = aws_api_gateway_rest_api.example[1].id
-   stage_name  = local.function_names[1]
-}
 
 resource "aws_lambda_permission" "apigw" {
    count = length(local.function_names)
@@ -169,10 +161,8 @@ resource "aws_lambda_permission" "apigw" {
 
 
 
-output "url_template-node" {
+output "find" {
   value = aws_api_gateway_deployment.example0.invoke_url
 }
 
-output "url_template-python" {
-  value = aws_api_gateway_deployment.example1.invoke_url
-}
+

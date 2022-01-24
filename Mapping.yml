@@ -1,0 +1,27 @@
+---
+name: "search"
+dataIns:
+- name: "orignal"
+  type: "string"
+  source: "This is a text string which consit of the patettern one one one two"
+- name: "pattern"
+  type: "string"
+  source: "one"
+- name: "offset"
+  type: "number"
+  source: 2
+workflowBody:
+- function:
+    name: "find"
+    type: "find"
+    dataIns:
+    - name: "OrignalText"
+      type: "string"
+      source: "search/orignal"
+    dataOuts:
+    - name: "patternArray"
+      type: "collection"
+dataOuts:
+- name: "SearchedText"
+  type: "collection"
+  source: "find/patternArray"

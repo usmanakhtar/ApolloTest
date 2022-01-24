@@ -60,8 +60,8 @@ done
 mkdir -p tmp
 rm tmp/*.zip
 
-./build.sh ../functions/template-python
-./build.sh ../functions/template-node
+./build.sh ../functions/find
+
 
 terraform init
 

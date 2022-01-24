@@ -1,10 +1,10 @@
 def cloud_function(json_input):
-    input1 = json_input["input1"]
+    orignal = json_input["OrignalText"]
     
     # Processing
 
     # return the result
     res = {
-        "input1": input1
+        "patternArray": orignal
     }
     return res
